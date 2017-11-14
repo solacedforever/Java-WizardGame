@@ -16,7 +16,6 @@ public class Game extends Canvas implements Runnable {
         
         handler = new Handler();
         
-        handler.addObject (new Box(100,100, ID.Block));
     }
     
     private void start(){
