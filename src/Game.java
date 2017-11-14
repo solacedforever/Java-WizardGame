@@ -15,7 +15,7 @@ public class Game extends Canvas implements Runnable {
         start();
         
         handler = new Handler();
-        
+        this.addKeyListener(new KeyInput(handler));
     }
     
     private void start(){
