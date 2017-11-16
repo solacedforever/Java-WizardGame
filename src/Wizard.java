@@ -15,6 +15,8 @@ public class Wizard extends GameObject {
         
         
         //movement
+        
+        
         if(handler.isUp()) velY = -5;
         else if(!handler.isDown()) velY = 0;
         
