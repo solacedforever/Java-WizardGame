@@ -109,7 +109,6 @@ public class Game extends Canvas implements Runnable {
         bs.show();
     }
     
-    //loading level
     private void loadLevel(BufferedImage image) {
         int w = image.getWidth();
         int h = image.getHeight();
@@ -134,8 +133,6 @@ public class Game extends Canvas implements Runnable {
     public static void main(String[] Args) {
     
         new Game();
+    }
     
-    }//end of main
-    
-
-}//end of Game class
+}
