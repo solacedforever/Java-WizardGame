@@ -1,6 +1,6 @@
 public class Camera {
     
-    private float x,y;
+    private float x, y;
     
     public Camera(float x, float y) {
         this.x = x;
@@ -9,11 +9,15 @@ public class Camera {
     
     public void tick(GameObject object){
        
-       // x = object.getX() + 1000/2; to have center camera
+//        x = object.getX() + 1000/2;
         
         x += ((object.getX() - x) - 1000/2) * 0.05f; //to follow player
-        x += ((object.getX() - y) - 563/2) * 0.05f; //to follow player
+        y += ((object.getY() - y) - 563/2) * 0.05f; //to follow player
         
+        if(x <= 0) x = 0;
+        if(x >= 1032) x = 1032;
+        if(y <= 0) y = 0;
+        if(y >= 563+48) y = 563+48;
     }
     
     public float getX() {
