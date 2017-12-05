@@ -9,7 +9,7 @@ public class Camera {
     
     public void tick(GameObject object){
         
-        x += ((object.getX() - x) - 1000/2) * 0.05f; //to follow player
+        x += ((object.getX() - x) - 1000/2) * 0.05f; //to follow player (needs corrected)
         y += ((object.getY() - y) - 563/2) * 0.05f; //to follow player
         
         if(x <= 0) x = 0;
