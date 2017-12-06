@@ -13,6 +13,8 @@ public class Game extends Canvas implements Runnable {
     
     private BufferedImage level = null;
     
+    public int ammo = 100;
+    
     public Game() {
         new Window(1000,563,"Wizard Game",this);
         start();
@@ -20,7 +22,7 @@ public class Game extends Canvas implements Runnable {
         handler = new Handler();
         camera = new Camera(0,0);
         this.addKeyListener(new KeyInput(handler));
-        this.addMouseListener(new MouseInput(handler, camera));
+        this.addMouseListener(new MouseInput(handler, camera, this));
         
         
         BufferedImageLoader loader = new BufferedImageLoader();

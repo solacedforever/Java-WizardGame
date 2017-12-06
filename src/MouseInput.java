@@ -5,10 +5,12 @@ public class MouseInput extends MouseAdapter {
     
     private Handler handler;
     private Camera camera;
+    private Game game;
     
-    public MouseInput(Handler handler, Camera camera){
+    public MouseInput(Handler handler, Camera camera, Game game){
         this.handler = handler;
         this.camera = camera;
+        this.game = game;
     }
     
     public void mousePressed(MouseEvent e) {
