@@ -22,6 +22,7 @@ public class MouseInput extends MouseAdapter {
             
             if(tempObject.getId() == ID.Player) {
                 handler.addObject(new Bullet(tempObject.getX()+16, tempObject.getY()+24, ID.Bullet, handler, mx, my));
+                game.ammo--;
             }
         }
     }
