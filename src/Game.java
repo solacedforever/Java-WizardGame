@@ -117,8 +117,8 @@ public class Game extends Canvas implements Runnable {
         int w = image.getWidth();
         int h = image.getHeight();
         
-        for (int xx =0; xx < w; xx++) {
-            for(int yy =0; yy < h; yy++){
+        for (int xx = 0; xx < w; xx++) {
+            for(int yy = 0; yy < h; yy++){
                 int pixel = image.getRGB(xx,yy);
                 int red = (pixel >> 16) & 0xff;
                 int green = (pixel >> 8) & 0xff;
@@ -127,11 +127,14 @@ public class Game extends Canvas implements Runnable {
                 if(red == 255)
                     handler.addObject(new Block(xx*32,yy*32, ID.Block));
                 
-                if(blue == 255)
-                    handler.addObject(new Wizard(xx*32, yy*32, ID.Player, handler));
+                if(blue == 255) //should have && green == 0
+                    handler.addObject(new Wizard(xx*32, yy*32, ID.Player, handler, this));
                 
-                if(green == 255)
-                    handler.addObject(new Enemy(xx*32, yy*32, ID.Enemy, handler));
+                if(green == 255 && blue == 0)
+                    handler.addObject(new Enemy(xx*32, yy*32, ID.Enemy, handler));//broken after adding
+                
+                if(green == 255 && blue == 255)
+                    handler.addObject(new Crate(xx*32,yy*32,ID.Crate)); //not working as well
             }
         }
     }

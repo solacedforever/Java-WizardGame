@@ -3,10 +3,12 @@ import java.awt.*;
 public class Wizard extends GameObject {
     
     Handler handler;
+    Game game;
     
-    public Wizard(int x, int y, ID id, Handler handler) {
+    public Wizard(int x, int y, ID id, Handler handler, Game game) {
         super(x, y, id);
         this.handler = handler;
+        this.game = game;
     }
     
     public void tick() {
@@ -46,7 +48,16 @@ public class Wizard extends GameObject {
                 }
                 
             }
+    
+            if(tempObject.getId() == ID.Crate) {
         
+                if(getBounds().intersects(tempObject.getBounds())) {
+                  game.ammo += 10;
+                  handler.removeObject(tempObject);
+            
+                }
+        
+            }
         }
     }
     
