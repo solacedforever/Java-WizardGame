@@ -10,8 +10,10 @@ public class Game extends Canvas implements Runnable {
     private Thread thread;
     private Handler handler;
     private Camera camera;
+    private SpriteSheet ss;
     
     private BufferedImage level = null;
+    private BufferedImage sprite_sheet = null;
     
     public int ammo = 100;
     
@@ -27,7 +29,9 @@ public class Game extends Canvas implements Runnable {
         
         BufferedImageLoader loader = new BufferedImageLoader();
         level = loader.loadImage("/wizard_level.png"); //edit to test ammo crates with the wizard_level2.png file
+        sprite_sheet = loader.loadImage("/sprite_sheet.png");
         
+        ss = new SpriteSheet(sprite_sheet);
         
         loadLevel(level);
         
