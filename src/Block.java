@@ -1,9 +1,14 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class Block extends GameObject {
     
+    private BufferedImage block_image;
+    
     public Block(int x, int y, ID id, SpriteSheet ss) {
         super(x, y, id, ss);
+        
+        block_image = ss.grabImage(5,2,32,32);
     }
     
     public void tick() {
@@ -11,8 +16,7 @@ public class Block extends GameObject {
     }
     
     public void render(Graphics g) {
-        g.setColor(Color.black);
-        g.fillRect(x,y,32,32);
+        g.drawImage(block_image,x,y,null);
     }
     
     public Rectangle getBounds() {
