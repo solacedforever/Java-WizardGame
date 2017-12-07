@@ -5,8 +5,8 @@ public class Wizard extends GameObject {
     Handler handler;
     Game game;
     
-    public Wizard(int x, int y, ID id, Handler handler, Game game) {
-        super(x, y, id);
+    public Wizard(int x, int y, ID id, Handler handler, Game game, SpriteSheet ss) {
+        super(x, y, id, ss);
         this.handler = handler;
         this.game = game;
     }

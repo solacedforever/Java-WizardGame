@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Enemy extends GameObject {
     
-    public Enemy(int x, int y, ID id, Handler handler) {
-        super(x, y, id);
+    public Enemy(int x, int y, ID id, Handler handler, SpriteSheet ss) {
+        super(x, y, id, ss);
         this.handler = handler;
     }
     
