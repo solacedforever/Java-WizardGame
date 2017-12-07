@@ -14,6 +14,7 @@ public class Game extends Canvas implements Runnable {
     
     private BufferedImage level = null;
     private BufferedImage sprite_sheet = null;
+    private BufferedImage floor = null;
     
     public int ammo = 100;
     
@@ -31,6 +32,8 @@ public class Game extends Canvas implements Runnable {
         sprite_sheet = loader.loadImage("/sprite_sheet.png");
         
         ss = new SpriteSheet(sprite_sheet);
+        
+        floor = ss.grabImage(4,2,32,32);
         
         this.addMouseListener(new MouseInput(handler, camera, this, ss));
         
@@ -103,11 +106,20 @@ public class Game extends Canvas implements Runnable {
         Graphics2D g2d = (Graphics2D) g;
         ////////////////////////////////
     
-        g.setColor(Color.red);
-        g.fillRect(0,0,1000,563);
+        
+        
+//        g.setColor(Color.red); old background plain
+//        g.fillRect(0,0,1000,563);
+        
+        
         
         g2d.translate(-camera.getX(), -camera.getY());
         
+        for(int xx = 0; xx < 30*72; xx+=32){
+            for(int yy = 0; yy < 30*72; yy+=32) {
+                g.drawImage(floor,xx,yy,null);
+            }
+        }
         
         handler.render(g);
     
