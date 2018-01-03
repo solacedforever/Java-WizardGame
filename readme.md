@@ -1,0 +1,1 @@
+Working with a guide on youtube from RealTutsGML for this game project. Adding multiple modifications to bullet/enemy/character speed and level design ATM, more modifications to come soon!  
